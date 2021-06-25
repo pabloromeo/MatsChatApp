@@ -162,7 +162,7 @@ var chatSPA = {
                 var pubnubConstructorObject = {
                     subscribeKey: pubnubSubKey,
                     uuid: chatSPA.username,
-                    origin: chatSPA.appName+".pubnub.com", // Custom Origin
+                    //origin: chatSPA.appName+".pubnub.com", // Custom Origin
                     ssl: true,
                     presenceTimeout: 60
                 };

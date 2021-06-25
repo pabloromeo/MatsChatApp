@@ -255,7 +255,7 @@ app.post('/inbound/message/:vendor', (request, response) => {
             subscribeKey : config.pubnubSubscribeKey,
             ssl: true,
             uuid: senderID,
-            origin: config.pubnubDomain+".pubnub.com"
+            //origin: config.pubnubDomain+".pubnub.com"
         };
         if(config.useMessageEncryption == true){
             pubnubClientConfig.cipherKey = config.cipherKey || config.AppName;
@@ -1321,13 +1321,14 @@ app.post('/video/join/session/:vendor', (request, response) => {
                 // Vonage
                 if(videoVendor == "Vonage"){
                     var OpenTok = require('opentok'),
-                    opentok = new OpenTok(config.TokBoxAPIKey, config.TokBoxSecret);
+                    opentok = new OpenTok(config.VonageVideoAPIKey, config.VonageVideoSecret);
                     var sessionId = request.body.session;
                     var token = opentok.generateToken(sessionId);
 
                     var videoSessionDetails = {
                         session: sessionId,
-                        token: token
+                        token: token,
+                        vendor: "Vonage"
                     };
 
                     // Return the video session details back to the user
@@ -1670,7 +1671,7 @@ app.post('/message', (request, response) => {
                                 subscribeKey : config.pubnubSubscribeKey,
                                 ssl: true,
                                 uuid: decodedUsername,
-                                origin: config.pubnubDomain+".pubnub.com"
+                                //origin: config.pubnubDomain+".pubnub.com"
                             };
                             if(config.useMessageEncryption == true){
                                 pubnubClientConfig.cipherKey = config.cipherKey || config.AppName;
@@ -1744,7 +1745,7 @@ app.post('/message', (request, response) => {
                                         subscribeKey : config.pubnubSubscribeKey,
                                         ssl: true,
                                         uuid: decodedUsername,
-                                        origin: config.pubnubDomain+".pubnub.com"
+                                        //origin: config.pubnubDomain+".pubnub.com"
                                     };
                                     if(config.useMessageEncryption == true){
                                         pubnubClientConfig.cipherKey = config.cipherKey || config.AppName;
@@ -1781,7 +1782,7 @@ app.post('/message', (request, response) => {
                                             subscribeKey : config.pubnubSubscribeKey,
                                             ssl: true,
                                             uuid: decodedUsername,
-                                            origin: config.pubnubDomain+".pubnub.com"
+                                            //origin: config.pubnubDomain+".pubnub.com"
                                         };
                                         if(config.useMessageEncryption == true){
                                             pubnubClientConfig.cipherKey = config.cipherKey || config.AppName;

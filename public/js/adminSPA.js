@@ -32,7 +32,7 @@ var adminSPA = {
             secretKey: pubnubSecretKey,
             autoNetworkDetection: true, // enable for non-browser environment automatic reconnection
             restore: true, // enable catchup on missed messages,
-            origin: adminSPA.appName+".pubnub.com" // Custom Origin
+            //origin: adminSPA.appName+".pubnub.com" // Custom Origin
         });
 
         // Subscribe to the Admin Channel to keep an eye on events and notices.
