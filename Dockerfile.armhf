@@ -4,7 +4,7 @@ LABEL maintainer="pabloromeo"
 
 COPY qemu-arm-static /usr/bin/
 
-RUN apt-get update || : && apt-get install make python -y
+RUN apt-get update || : && apt-get install g++ make python -y
 
 WORKDIR /app
 
